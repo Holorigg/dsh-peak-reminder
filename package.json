@@ -1,17 +1,17 @@
 {
   "name": "dsh-peak-reminder",
-  "version": "0.3.0",
-  "description": "DSH plugin: reminds you when DeepSeek is on peak-hour pricing, tracks this week's peak spend, and can pause running tasks during peak hours and resume them in the valley.",
+  "version": "0.3.1",
+  "description": "DSH plugin: reminds you when DeepSeek is on peak-hour pricing, tracks this week's peak spend, and can pause running tasks during peak hours and resume them in the valley. English fork.",
   "icon": "icon.svg",
   "license": "MIT",
-  "author": "54nanmiao",
+  "author": "54nanmiao (original), Holorigg (English fork)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/54nanmiao/dsh-peak-reminder.git"
+    "url": "git+https://github.com/Holorigg/dsh-peak-reminder.git"
   },
-  "homepage": "https://github.com/54nanmiao/dsh-peak-reminder#readme",
+  "homepage": "https://github.com/Holorigg/dsh-peak-reminder#readme",
   "bugs": {
-    "url": "https://github.com/54nanmiao/dsh-peak-reminder/issues"
+    "url": "https://github.com/Holorigg/dsh-peak-reminder/issues"
   },
   "type": "module",
   "main": "lib/index.js",

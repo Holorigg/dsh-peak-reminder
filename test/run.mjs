@@ -2,7 +2,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import {
-  isPeakTime, nextPeakChangeAt, currentPeakWindow, dayKindLabel, isWeekend, isHolidayValley,
+  isPeakTime, nextPeakChangeAt, currentPeakWindow, dayKindCode, dayKindLabel, isWeekend, isHolidayValley,
   makeRules, normalizePeakHours, normalizeHolidays,
 } from '../lib/peak.js'
 import { weekSummary, weekStartSec } from '../lib/ledger.js'
@@ -61,9 +61,12 @@ t('switch flips', () => {
 })
 
 t('dayKind', () => {
-  eq(dayKindLabel(bj(2026, 10, 23, 10, 0)), '工作日', 'wd')
-  eq(dayKindLabel(bj(2026, 10, 24, 10, 0)), '周末', 'we')
-  eq(dayKindLabel(bj(2026, 10, 1, 10, 0)), '法定节假日', 'hol')
+  eq(dayKindCode(bj(2026, 10, 23, 10, 0)), 'weekday', 'wd code')
+  eq(dayKindCode(bj(2026, 10, 24, 10, 0)), 'weekend', 'we code')
+  eq(dayKindCode(bj(2026, 10, 1, 10, 0)), 'holiday', 'hol code')
+  eq(dayKindLabel(bj(2026, 10, 23, 10, 0)), 'Weekday', 'wd label')
+  eq(dayKindLabel(bj(2026, 10, 24, 10, 0)), 'Weekend', 'we label')
+  eq(dayKindLabel(bj(2026, 10, 1, 10, 0)), 'Public holiday', 'hol label')
 })
 
 t('custom peak hours', () => {
